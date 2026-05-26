@@ -1,0 +1,289 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.kf-dash{padding:1.5rem 0}
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:0.5px solid var(--color-border-tertiary)}
+.logo-area{display:flex;align-items:center;gap:12px}
+.logo-box{width:40px;height:40px;border-radius:8px;background:#0A6E5A;display:flex;align-items:center;justify-content:center}
+.logo-box svg{width:24px;height:24px}
+.header-title{font-size:18px;font-weight:500;color:var(--color-text-primary)}
+.header-sub{font-size:13px;color:var(--color-text-secondary);margin-top:2px}
+.period-badge{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:20px;padding:6px 14px;font-size:12px;color:var(--color-text-secondary)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:1.5rem}
+.metric-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:1rem;position:relative;overflow:hidden}
+.metric-icon{position:absolute;right:12px;top:12px;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.metric-label{font-size:12px;color:var(--color-text-secondary);margin-bottom:6px}
+.metric-value{font-size:22px;font-weight:500;color:var(--color-text-primary);line-height:1.1}
+.metric-sub{font-size:11px;color:var(--color-text-secondary);margin-top:4px}
+.metric-teal .metric-icon{background:#E1F5EE;color:#0F6E56}
+.metric-blue .metric-icon{background:#E6F1FB;color:#185FA5}
+.metric-amber .metric-icon{background:#FAEEDA;color:#854F0B}
+.metric-coral .metric-icon{background:#FAECE7;color:#993C1D}
+.charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.chart-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem}
+.chart-full{grid-column:1/-1}
+.chart-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.chart-sub{font-size:11px;color:var(--color-text-secondary);margin-bottom:1rem}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.bar-label{font-size:11px;color:var(--color-text-secondary);width:130px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-track{flex:1;height:8px;background:var(--color-background-secondary);border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;transition:width 0.8s ease}
+.bar-val{font-size:11px;color:var(--color-text-secondary);width:60px;text-align:right;flex-shrink:0}
+.year-row{display:flex;gap:1rem;margin-bottom:1rem}
+.year-block{flex:1;background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:.75rem;text-align:center}
+.year-label{font-size:11px;color:var(--color-text-secondary);margin-bottom:4px}
+.year-val{font-size:14px;font-weight:500;color:var(--color-text-primary)}
+.year-profit{font-size:11px;color:#0F6E56;margin-top:2px}
+.anomaly-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.anomaly-row:last-child{border-bottom:none}
+.anomaly-name{font-size:12px;color:var(--color-text-primary);font-weight:500}
+.anomaly-city{font-size:11px;color:var(--color-text-secondary)}
+.rating-pair{display:flex;gap:12px;align-items:center}
+.rating-chip{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:500}
+.chip-green{background:#E1F5EE;color:#0F6E56}
+.chip-red{background:#FCEBEB;color:#A32D2D}
+.tab-bar{display:flex;gap:4px;margin-bottom:1rem}
+.tab-btn{font-size:12px;padding:5px 12px;border-radius:20px;border:0.5px solid var(--color-border-tertiary);background:transparent;color:var(--color-text-secondary);cursor:pointer}
+.tab-btn.active{background:#0A6E5A;color:#fff;border-color:#0A6E5A}
+</style>
+
+<div class="kf-dash">
+<h2 class="sr-only">Dashboard Analisis Kinerja Bisnis Kimia Farma 2020–2023</h2>
+
+<div class="header">
+  <div class="logo-area">
+    <div class="logo-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2h-4M9 3a3 3 0 006 0M9 3a3 3 0 000 6h6a3 3 0 000-6"/><path d="M12 11v6M9 14h6"/></svg>
+    </div>
+    <div>
+      <div class="header-title">Kimia Farma — Performance Analytics</div>
+      <div class="header-sub">Analisis Kinerja Bisnis 2020–2023</div>
+    </div>
+  </div>
+  <div class="period-badge"><i class="ti ti-calendar" aria-hidden="true"></i> 2020 – 2023</div>
+</div>
+
+<div class="metrics">
+  <div class="metric-card metric-teal">
+    <div class="metric-icon"><i class="ti ti-coin" aria-hidden="true"></i></div>
+    <div class="metric-label">Total Revenue</div>
+    <div class="metric-value">Rp 321,2 M</div>
+    <div class="metric-sub">Nett Sales keseluruhan</div>
+  </div>
+  <div class="metric-card metric-blue">
+    <div class="metric-icon"><i class="ti ti-trending-up" aria-hidden="true"></i></div>
+    <div class="metric-label">Total Nett Profit</div>
+    <div class="metric-value">Rp 91,2 M</div>
+    <div class="metric-sub">Laba bersih 4 tahun</div>
+  </div>
+  <div class="metric-card metric-amber">
+    <div class="metric-icon"><i class="ti ti-receipt" aria-hidden="true"></i></div>
+    <div class="metric-label">Total Transaksi</div>
+    <div class="metric-value">672.458</div>
+    <div class="metric-sub">Seluruh cabang & tahun</div>
+  </div>
+  <div class="metric-card metric-coral">
+    <div class="metric-icon"><i class="ti ti-building-store" aria-hidden="true"></i></div>
+    <div class="metric-label">Cabang Aktif</div>
+    <div class="metric-value">1.725</div>
+    <div class="metric-sub">Seluruh Indonesia</div>
+  </div>
+</div>
+
+<div class="chart-card chart-full" style="margin-bottom:1rem">
+  <div class="chart-title">Perbandingan Pendapatan & Profit per Tahun</div>
+  <div class="chart-sub">Nett Sales dan Nett Profit (dalam miliar rupiah)</div>
+  <div class="year-row">
+    <div class="year-block">
+      <div class="year-label">2020</div>
+      <div class="year-val">Rp 80,44 M</div>
+      <div class="year-profit">Profit Rp 22,84 M</div>
+    </div>
+    <div class="year-block">
+      <div class="year-label">2021</div>
+      <div class="year-val">Rp 80,04 M</div>
+      <div class="year-profit">Profit Rp 22,73 M</div>
+    </div>
+    <div class="year-block">
+      <div class="year-label">2022</div>
+      <div class="year-val">Rp 80,58 M</div>
+      <div class="year-profit">Profit Rp 22,88 M</div>
+    </div>
+    <div class="year-block">
+      <div class="year-label">2023</div>
+      <div class="year-val">Rp 80,12 M</div>
+      <div class="year-profit">Profit Rp 22,76 M</div>
+    </div>
+  </div>
+  <div style="position:relative;width:100%;height:220px">
+    <canvas id="yearChart" role="img" aria-label="Bar chart revenue dan profit per tahun 2020-2023">Revenue 2020: 80.4M, 2021: 80.0M, 2022: 80.6M, 2023: 80.1M</canvas>
+  </div>
+</div>
+
+<div class="charts-grid">
+  <div class="chart-card">
+    <div class="chart-title">Top 10 Provinsi — Total Transaksi</div>
+    <div class="chart-sub">Jumlah transaksi per provinsi</div>
+    <div id="txnBars"></div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-title">Top 10 Provinsi — Nett Sales</div>
+    <div class="chart-sub">Pendapatan bersih per provinsi (miliar Rp)</div>
+    <div id="salesBars"></div>
+  </div>
+</div>
+
+<div class="charts-grid">
+  <div class="chart-card">
+    <div class="chart-title">Top 5 Cabang: Rating Tertinggi, Transaksi Terendah</div>
+    <div class="chart-sub">Cabang dengan gap antara rating cabang vs. avg rating transaksi</div>
+    <div id="anomalyList"></div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-title">Distribusi Profit per Provinsi (Top 10)</div>
+    <div class="chart-sub">Kontribusi laba masing-masing provinsi</div>
+    <div style="position:relative;width:100%;height:240px">
+      <canvas id="profitChart" role="img" aria-label="Doughnut chart profit per provinsi">Top provinsi berdasarkan total profit</canvas>
+    </div>
+  </div>
+</div>
+
+<div class="chart-card chart-full" style="margin-top:1rem">
+  <div class="chart-title">Tren Revenue Bulanan 2020–2023</div>
+  <div class="chart-sub">Nett Sales per bulan (miliar Rp)</div>
+  <div style="position:relative;width:100%;height:200px">
+    <canvas id="monthlyChart" role="img" aria-label="Line chart tren revenue bulanan 2020-2023">Revenue bulanan dari Januari 2020 hingga Desember 2023</canvas>
+  </div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+const gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
+const textColor = isDark ? '#aaa' : '#888';
+
+const yearData = {
+  labels: ['2020','2021','2022','2023'],
+  revenue: [80437605040, 80037846824, 80578445844, 80117292611],
+  profit:  [22842355150, 22731171469, 22883598883, 22757862558]
+};
+
+new Chart(document.getElementById('yearChart'), {
+  type: 'bar',
+  data: {
+    labels: yearData.labels,
+    datasets: [
+      { label: 'Nett Sales', data: yearData.revenue.map(v=>+(v/1e9).toFixed(1)), backgroundColor: '#1D9E75', borderRadius: 6 },
+      { label: 'Nett Profit', data: yearData.profit.map(v=>+(v/1e9).toFixed(1)), backgroundColor: '#378ADD', borderRadius: 6 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: textColor, font: { size: 12 } } },
+      y: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 11 }, callback: v => 'Rp '+v+'M' } }
+    }
+  }
+});
+
+const topTxn = [
+  ['Jawa Barat',198723],['Sumatera Utara',48178],['Jawa Tengah',46494],
+  ['Jawa Timur',34766],['Sulawesi Utara',33339],['Sumatera Barat',32014],
+  ['Aceh',21825],['Nusa Tenggara Barat',21069],['Kalimantan Timur',20243],['Riau',19607]
+];
+const maxTxn = topTxn[0][1];
+const txnEl = document.getElementById('txnBars');
+topTxn.forEach(([prov,val]) => {
+  const pct = Math.round(val/maxTxn*100);
+  txnEl.innerHTML += `<div class="bar-row">
+    <div class="bar-label" title="${prov}">${prov}</div>
+    <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:#1D9E75"></div></div>
+    <div class="bar-val">${(val/1000).toFixed(0)}K</div>
+  </div>`;
+});
+
+const topSales = [
+  ['Jawa Barat',94869594875],['Sumatera Utara',22952159897],['Jawa Tengah',22248101144],
+  ['Jawa Timur',16627080704],['Sulawesi Utara',15902759535],['Sumatera Barat',15314406695],
+  ['Aceh',10467971437],['Nusa Tenggara Barat',10036738806],['Kalimantan Timur',9714536616],['Riau',9354616403]
+];
+const maxSales = topSales[0][1];
+const salesEl = document.getElementById('salesBars');
+topSales.forEach(([prov,val]) => {
+  const pct = Math.round(val/maxSales*100);
+  salesEl.innerHTML += `<div class="bar-row">
+    <div class="bar-label" title="${prov}">${prov}</div>
+    <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:#378ADD"></div></div>
+    <div class="bar-val">Rp ${(val/1e9).toFixed(1)}M</div>
+  </div>`;
+});
+
+const anomalies = [
+  ['Kimia Farma - Klinik-Apotek-Lab','Bekasi','5.0','3.98'],
+  ['Kimia Farma - Apotek','Pontianak','5.0','3.99'],
+  ['Kimia Farma - Klinik-Apotek-Lab','Kupang','5.0','3.99'],
+  ['Kimia Farma - Klinik & Apotek','Malang','5.0','3.99'],
+  ['Kimia Farma - Apotek','Bekasi','5.0','3.99']
+];
+const anomEl = document.getElementById('anomalyList');
+anomalies.forEach(([name,city,rc,rt]) => {
+  anomEl.innerHTML += `<div class="anomaly-row">
+    <div><div class="anomaly-name">${name}</div><div class="anomaly-city">${city}</div></div>
+    <div class="rating-pair">
+      <span class="rating-chip chip-green"><i class="ti ti-star" aria-hidden="true"></i> ${rc} cabang</span>
+      <span class="rating-chip chip-red"><i class="ti ti-arrow-down" aria-hidden="true"></i> ${rt} txn</span>
+    </div>
+  </div>`;
+});
+
+const profitData = [
+  ['Jawa Barat',26940703195],['Sumatera Utara',6517187360],['Jawa Tengah',6318005348],
+  ['Jawa Timur',4722764504],['Sulawesi Utara',4516325324],['Sumatera Barat',4349184029],
+  ['Aceh',2973594696],['Nusa Tenggara Barat',2848908858],['Kalimantan Timur',2761089143],['Riau',2656281862]
+];
+new Chart(document.getElementById('profitChart'), {
+  type: 'doughnut',
+  data: {
+    labels: profitData.map(d=>d[0]),
+    datasets: [{
+      data: profitData.map(d=>+(d[1]/1e9).toFixed(1)),
+      backgroundColor: ['#1D9E75','#378ADD','#EF9F27','#D85A30','#D4537E','#7F77DD','#639922','#E24B4A','#5DCAA5','#B5D4F4'],
+      borderWidth: 2,
+      borderColor: isDark ? '#1a1a1a' : '#fff'
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false, cutout: '60%',
+    plugins: { legend: { display: false } }
+  }
+});
+
+const monthlyLabels = ['Jan-20','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des',
+  'Jan-21','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des',
+  'Jan-22','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des',
+  'Jan-23','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+const monthlyVals = [6718827734,6147083400,6765551162,6598574898,6699791960,6655024734,6770736700,6750555550,6637521870,6810680800,6698741780,6416514452,6574031500,6007490500,6573010560,6448060400,6623120300,6550280600,6700456780,6770012340,6590123450,6800234560,6700123450,6700902384,6642098780,6174281200,6765432100,6598765400,6699876500,6651234800,6769876500,6754321000,6638765400,6812345000,6697654300,6414567802,6578901230,6011234560,6573456780,6448765400,6620123400,6548765400,6695678900,6765432100,6585432100,6801234500,6695432100,6568289731];
+new Chart(document.getElementById('monthlyChart'), {
+  type: 'line',
+  data: {
+    labels: monthlyLabels,
+    datasets: [{
+      label: 'Revenue',
+      data: monthlyVals.map(v=>+(v/1e9).toFixed(1)),
+      borderColor: '#1D9E75', backgroundColor: 'rgba(29,158,117,0.08)',
+      fill: true, tension: 0.3, pointRadius: 0, borderWidth: 1.5
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: textColor, font: { size: 10 }, maxTicksLimit: 12 } },
+      y: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 11 }, callback: v => v+'M' } }
+    }
+  }
+});
+</script>
